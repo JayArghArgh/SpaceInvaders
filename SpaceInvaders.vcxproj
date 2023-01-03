@@ -70,6 +70,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\code\CPP_Projects\SpaceInvaders\src\Screens;C:\code\CPP_Projects\SpaceInvaders\src\GameObjects;C:\code\CPP_Projects\SpaceInvaders\src\FileIO;C:\code\CPP_Projects\SpaceInvaders\src\Engine;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\code\CPP_Projects\SpaceInvaders\src\Screens;C:\code\CPP_Projects\SpaceInvaders\src\GameObjects;C:\code\CPP_Projects\SpaceInvaders\src\FileIO;C:\code\CPP_Projects\SpaceInvaders\src\Engine;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -133,87 +139,87 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BitmapStore.cpp" />
-    <ClCompile Include="BlueprintObjectParser.cpp" />
-    <ClCompile Include="BulletSpawner.cpp" />
-    <ClCompile Include="BulletUpdate.cpp" />
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="ColliderComponent.cpp" />
-    <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="GameInputHandler.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameObjectBlueprint.cpp" />
-    <ClCompile Include="GameObjectFactoryPlayMode.cpp" />
-    <ClCompile Include="GameObjectSharer.cpp" />
-    <ClCompile Include="GameOverInputHandler.cpp" />
-    <ClCompile Include="GameOverUIPanel.cpp" />
-    <ClCompile Include="GameScreen.cpp" />
-    <ClCompile Include="GameUIPanel.cpp" />
-    <ClCompile Include="GraphicsComponent.cpp" />
-    <ClCompile Include="InputHandler.cpp" />
-    <ClCompile Include="Invader2Update.cpp" />
-    <ClCompile Include="InvaderUpdate.cpp" />
-    <ClCompile Include="LevelManager.cpp" />
-    <ClCompile Include="ObjectTags.cpp" />
-    <ClCompile Include="PhysicsEnginePlayMode.cpp" />
-    <ClCompile Include="PlayerUpdate.cpp" />
-    <ClCompile Include="PlayModeObjectLoader.cpp" />
-    <ClCompile Include="RectColliderComponent.cpp" />
-    <ClCompile Include="Screen.cpp" />
-    <ClCompile Include="ScreenManager.cpp" />
-    <ClCompile Include="ScreenManagerRemoteControl.cpp" />
-    <ClCompile Include="SelectInputHandler.cpp" />
-    <ClCompile Include="SelectScreen.cpp" />
-    <ClCompile Include="SelectUIPanel.cpp" />
-    <ClCompile Include="SoundEngine.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="SpaceInvaders.cpp" />
-    <ClCompile Include="StandardGraphicsComponent.cpp" />
-    <ClCompile Include="TransformComponent.cpp" />
-    <ClCompile Include="UIPanel.cpp" />
-    <ClCompile Include="UpdateComponent.cpp" />
+    <ClCompile Include="src\Engine\BitmapStore.cpp" />
+    <ClCompile Include="src\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Engine\LevelManager.cpp" />
+    <ClCompile Include="src\Engine\PhysicsEnginePlayMode.cpp" />
+    <ClCompile Include="src\Engine\ScreenManager.cpp" />
+    <ClCompile Include="src\Engine\SoundEngine.cpp" />
+    <ClCompile Include="src\Engine\SpaceInvaders.cpp" />
+    <ClCompile Include="src\FileIO\BlueprintObjectParser.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectBlueprint.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectFactoryPlayMode.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectSharer.cpp" />
+    <ClCompile Include="src\FileIO\ObjectTags.cpp" />
+    <ClCompile Include="src\FileIO\PlayModeObjectLoader.cpp" />
+    <ClCompile Include="src\GameObjects\BulletSpawner.cpp" />
+    <ClCompile Include="src\GameObjects\BulletUpdate.cpp" />
+    <ClCompile Include="src\GameObjects\ColliderComponent.cpp" />
+    <ClCompile Include="src\GameObjects\Component.cpp" />
+    <ClCompile Include="src\GameObjects\GameObject.cpp" />
+    <ClCompile Include="src\GameObjects\GraphicsComponent.cpp" />
+    <ClCompile Include="src\GameObjects\Invader2Update.cpp" />
+    <ClCompile Include="src\GameObjects\InvaderUpdate.cpp" />
+    <ClCompile Include="src\GameObjects\PlayerUpdate.cpp" />
+    <ClCompile Include="src\GameObjects\RectColliderComponent.cpp" />
+    <ClCompile Include="src\GameObjects\StandardGraphicsComponent.cpp" />
+    <ClCompile Include="src\GameObjects\TransformComponent.cpp" />
+    <ClCompile Include="src\GameObjects\UpdateComponent.cpp" />
+    <ClCompile Include="src\Screens\Button.cpp" />
+    <ClCompile Include="src\Screens\GameInputHandler.cpp" />
+    <ClCompile Include="src\Screens\GameOverInputHandler.cpp" />
+    <ClCompile Include="src\Screens\GameOverUIPanel.cpp" />
+    <ClCompile Include="src\Screens\GameScreen.cpp" />
+    <ClCompile Include="src\Screens\GameUIPanel.cpp" />
+    <ClCompile Include="src\Screens\InputHandler.cpp" />
+    <ClCompile Include="src\Screens\Screen.cpp" />
+    <ClCompile Include="src\Screens\ScreenManagerRemoteControl.cpp" />
+    <ClCompile Include="src\Screens\SelectInputHandler.cpp" />
+    <ClCompile Include="src\Screens\SelectScreen.cpp" />
+    <ClCompile Include="src\Screens\SelectUIPanel.cpp" />
+    <ClCompile Include="src\Screens\UIPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BitmapStore.h" />
-    <ClInclude Include="BlueprintObjectParser.h" />
-    <ClInclude Include="BulletSpawner.h" />
-    <ClInclude Include="BulletUpdateComponent.h" />
-    <ClInclude Include="Button.h" />
-    <ClInclude Include="ColliderComponent.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="DevelopState.h" />
-    <ClInclude Include="GameEngine.h" />
-    <ClInclude Include="GameInputHandler.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameObjectBlueprint.h" />
-    <ClInclude Include="GameObjectFactoryPlayMode.h" />
-    <ClInclude Include="GameObjectSharer.h" />
-    <ClInclude Include="GameOverInputHandler.h" />
-    <ClInclude Include="GameOverUIPanel.h" />
-    <ClInclude Include="GameScreen.h" />
-    <ClInclude Include="GameUIPanel.h" />
-    <ClInclude Include="GraphicsComponent.h" />
-    <ClInclude Include="InputHandler.h" />
-    <ClInclude Include="Invader2UpdateComponent.h" />
-    <ClInclude Include="InvaderUpdateComponent.h" />
-    <ClInclude Include="LevelManager.h" />
-    <ClInclude Include="ObjectTags.h" />
-    <ClInclude Include="PhysicsEnginePlayMode.h" />
-    <ClInclude Include="PlayerUpdateComponent.h" />
-    <ClInclude Include="PlayModeObjectLoader.h" />
-    <ClInclude Include="RectColliderComponent.h" />
-    <ClInclude Include="Screen.h" />
-    <ClInclude Include="ScreenManager.h" />
-    <ClInclude Include="ScreenManagerRemoteControl.h" />
-    <ClInclude Include="SelectInputHandler.h" />
-    <ClInclude Include="SelectScreen.h" />
-    <ClInclude Include="SelectUIPanel.h" />
-    <ClInclude Include="SoundEngine.h" />
-    <ClInclude Include="StandardGraphicsComponent.h" />
-    <ClInclude Include="TransformComponent.h" />
-    <ClInclude Include="UIPanel.h" />
-    <ClInclude Include="UpdateComponent.h" />
-    <ClInclude Include="WorldState.h" />
+    <ClInclude Include="src\Engine\BitmapStore.h" />
+    <ClInclude Include="src\Engine\DevelopState.h" />
+    <ClInclude Include="src\Engine\GameEngine.h" />
+    <ClInclude Include="src\Engine\LevelManager.h" />
+    <ClInclude Include="src\Engine\PhysicsEnginePlayMode.h" />
+    <ClInclude Include="src\Engine\ScreenManager.h" />
+    <ClInclude Include="src\Engine\SoundEngine.h" />
+    <ClInclude Include="src\Engine\WorldState.h" />
+    <ClInclude Include="src\FileIO\BlueprintObjectParser.h" />
+    <ClInclude Include="src\FileIO\GameObjectBlueprint.h" />
+    <ClInclude Include="src\FileIO\GameObjectFactoryPlayMode.h" />
+    <ClInclude Include="src\FileIO\GameObjectSharer.h" />
+    <ClInclude Include="src\FileIO\ObjectTags.h" />
+    <ClInclude Include="src\FileIO\PlayModeObjectLoader.h" />
+    <ClInclude Include="src\GameObjects\BulletSpawner.h" />
+    <ClInclude Include="src\GameObjects\BulletUpdateComponent.h" />
+    <ClInclude Include="src\GameObjects\ColliderComponent.h" />
+    <ClInclude Include="src\GameObjects\Component.h" />
+    <ClInclude Include="src\GameObjects\GameObject.h" />
+    <ClInclude Include="src\GameObjects\GraphicsComponent.h" />
+    <ClInclude Include="src\GameObjects\Invader2UpdateComponent.h" />
+    <ClInclude Include="src\GameObjects\InvaderUpdateComponent.h" />
+    <ClInclude Include="src\GameObjects\PlayerUpdateComponent.h" />
+    <ClInclude Include="src\GameObjects\RectColliderComponent.h" />
+    <ClInclude Include="src\GameObjects\StandardGraphicsComponent.h" />
+    <ClInclude Include="src\GameObjects\TransformComponent.h" />
+    <ClInclude Include="src\GameObjects\UpdateComponent.h" />
+    <ClInclude Include="src\Screens\Button.h" />
+    <ClInclude Include="src\Screens\GameInputHandler.h" />
+    <ClInclude Include="src\Screens\GameOverInputHandler.h" />
+    <ClInclude Include="src\Screens\GameOverUIPanel.h" />
+    <ClInclude Include="src\Screens\GameScreen.h" />
+    <ClInclude Include="src\Screens\GameUIPanel.h" />
+    <ClInclude Include="src\Screens\InputHandler.h" />
+    <ClInclude Include="src\Screens\Screen.h" />
+    <ClInclude Include="src\Screens\ScreenManagerRemoteControl.h" />
+    <ClInclude Include="src\Screens\SelectInputHandler.h" />
+    <ClInclude Include="src\Screens\SelectScreen.h" />
+    <ClInclude Include="src\Screens\SelectUIPanel.h" />
+    <ClInclude Include="src\Screens\UIPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="sound\click.ogg" />
