@@ -118,7 +118,7 @@ void GameInputHandler::handleKeyReleased(
 	else if (event.key.code == Keyboard::Space)
 	{
 		// Shoot a bullet
-		SoundEngine::playShoot();
+		// SoundEngine::playShoot();
 		Vector2f spawnLocation;
 		spawnLocation.x = m_PTC->getLocation().x +
 			m_PTC->getSize().x / 2;

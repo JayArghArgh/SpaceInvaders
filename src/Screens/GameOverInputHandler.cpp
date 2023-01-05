@@ -21,7 +21,7 @@ void GameOverInputHandler::handleLeftClick(
 		SoundEngine::playClick();
 		WorldState::WAVE_NUMBER = 0;
 		getPointerToScreenManagerRemoteControl()->
-			loadLevelInPlayMode("level2");
+			loadLevelInPlayMode("level1");
 	}
 
 	else if (buttonInteractedWith == "Home") {

@@ -164,7 +164,7 @@ void GameScreen::update(float fps)
 		{
 			WorldState::WAVE_NUMBER++;
 			m_ScreenManagerRemoteControl->
-				loadLevelInPlayMode("level2");
+				loadLevelInPlayMode("level1");
 		}
 
 		if (WorldState::LIVES <= 0)
