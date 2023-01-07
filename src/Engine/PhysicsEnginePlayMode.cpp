@@ -5,9 +5,10 @@
 #include "WorldState.h"
 #include "InvaderUpdateComponent.h"
 #include "BulletUpdateComponent.h"
+#include "MothershipUpdateComponent.h"
 
-void PhysicsEnginePlayMode::
-detectInvaderCollisions(
+
+void PhysicsEnginePlayMode::detectInvaderCollisions(
 	vector<GameObject>& objects,
 	const vector<int>& bulletPositions)
 {
@@ -20,7 +21,7 @@ detectInvaderCollisions(
 		++invaderIt)
 	{
 		if ((*invaderIt).isActive()
-			&& (*invaderIt).getTag() == "invader" or (*invaderIt).getTag() == "invader2")
+			&& ((*invaderIt).getTag() == "invader" || (*invaderIt).getTag() == "mothership"))
 		{
 			auto bulletIt = objects.begin();
 			// Jump to the first bullet
@@ -46,8 +47,17 @@ detectInvaderCollisions(
 					(*bulletIt).getTransformComponent()
 						->getLocation() = offScreen;
 
-					WorldState::SCORE++;
-					WorldState::NUM_INVADERS--;
+					if ((*invaderIt).getTag() == "invader")
+					{
+						WorldState::SCORE++;
+						WorldState::NUM_INVADERS--;
+					}
+					// TODO later on we'll tweak this to reset the mothership and give the player another crack at it.
+					else
+					{
+						WorldState::SCORE += 200;
+					}
+
 					(*invaderIt).setInactive();
 				}
 			}
@@ -55,8 +65,7 @@ detectInvaderCollisions(
 	}
 }
 
-void PhysicsEnginePlayMode::
-detectPlayerCollisionsAndInvaderDirection(
+void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirection(
 	vector<GameObject>& objects,
 	const vector<int>& bulletPositions)
 {
@@ -97,7 +106,7 @@ detectPlayerCollisionsAndInvaderDirection(
 						getLocation() = offScreen;
 				}
 
-				if ((*it3).getTag() == "invader" or (*it3).getTag() == "invader2")
+				if ((*it3).getTag() == "invader")
 				{
 					SoundEngine::playPlayerExplode();
 					SoundEngine::playInvaderExplode();
@@ -122,7 +131,7 @@ detectPlayerCollisionsAndInvaderDirection(
 				currentTransform->getSize();
 
 			// Handle the direction and descent of the invaders
-			if (currentTag == "invader" or currentTag == "invader2")
+			if (currentTag == "invader")
 			{
 				// This is an invader
 				if (!m_NeedToDropDownAndReverse &&
@@ -199,9 +208,7 @@ void PhysicsEnginePlayMode::detectCollisions(
 	const vector<int>& bulletPositions)
 {
 	detectInvaderCollisions(objects, bulletPositions);
-	detectPlayerCollisionsAndInvaderDirection(
-		objects, bulletPositions);
-
+	detectPlayerCollisionsAndInvaderDirection(objects, bulletPositions);
 	handleInvaderDirection();
 }
 
