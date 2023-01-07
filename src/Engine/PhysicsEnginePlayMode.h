@@ -1,4 +1,5 @@
 #pragma once
+// first up we'll adjust the header file for the physics engine
 #include "GameObjectSharer.h"
 #include "PlayerUpdateComponent.h"
 
@@ -8,6 +9,8 @@ private:
 	shared_ptr<PlayerUpdateComponent> m_PUC;
 
 	GameObject* m_Player;
+	// Create a Game object 
+	GameObject* m_Mothership;
 	bool m_InvaderHitWallThisFrame = false;
 	bool m_InvaderHitWallPreviousFrame = false;
 	bool m_NeedToDropDownAndReverse = false;

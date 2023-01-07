@@ -6,6 +6,7 @@
 #include "RectColliderComponent.h"
 #include "InvaderUpdateComponent.h"
 #include "BulletUpdateComponent.h"
+#include "MothershipUpdateComponent.h"
 
 void GameObjectFactoryPlayMode::buildGameObject(
 	GameObjectBlueprint& bp,
@@ -41,6 +42,10 @@ void GameObjectFactoryPlayMode::buildGameObject(
 		{
 			gameObject.addComponent(make_shared
 				<BulletUpdateComponent>());
+		}
+		else if (*it == "Mothership Update")
+		{
+			gameObject.addComponent(make_shared<MothershipUpdateComponent>());
 		}
 		else if (*it == "Standard Graphics")
 		{

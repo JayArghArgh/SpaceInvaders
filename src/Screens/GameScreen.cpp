@@ -36,16 +36,6 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc,
 
 	m_View.setCenter(Vector2f(WorldState::WORLD_WIDTH /
 		2, WorldState::WORLD_HEIGHT / 2));
-
-	// This image is the workk of: https://opengameart.org/users/alekei
-	// Download: https://opengameart.org/content/background-night
-	// License: https://creativecommons.org/licenses/by/3.0/
-	//m_BackgroundTexture.loadFromFile("graphics/background.png");
-
-	//m_BackgroundSprite.setTexture(m_BackgroundTexture);
-	//auto textureSize = m_BackgroundSprite.getTexture()->getSize();
-	//m_BackgroundSprite.setScale(float(m_View.getSize().x) / textureSize.x,
-		//float(m_View.getSize().y) / textureSize.y);
 }
 
 void GameScreen::initialise()
@@ -75,7 +65,7 @@ void GameScreen::initialise()
 		{
 			m_BulletObjectLocations.push_back(i);
 		}
-		if ((*it).getTag() == "invader" or (*it).getTag() == "invader2")
+		if ((*it).getTag() == "invader")
 		{
 			static_pointer_cast<InvaderUpdateComponent>(
 				(*it).getFirstUpdateComponent())->

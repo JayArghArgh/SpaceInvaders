@@ -38,7 +38,7 @@ void InvaderUpdateComponent::update(float fps)
 			spawnLocation.y = m_TC->getLocation().y +
 				m_TC->getSize().y;
 
-			m_BulletSpawner->spawnBullet(spawnLocation, false);
+		 	m_BulletSpawner->spawnBullet(spawnLocation, false);
 			srand(m_RandSeed);
 			int mTimeBetweenShots = (((rand() % 10)) + 1) /
 				WorldState::WAVE_NUMBER;
