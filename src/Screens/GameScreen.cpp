@@ -1,5 +1,6 @@
 #include "GameScreen.h"
 #include "GameUIPanel.h"
+#include "GameUIPanelLower.h"
 #include "GameInputHandler.h"
 #include "GameOverUIPanel.h"
 #include "WorldState.h"
@@ -20,6 +21,9 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc,
 	auto guip = make_unique<GameUIPanel>(res);
 	addPanel(move(guip), smrc, m_GIH);
 
+	auto guipl = make_unique<GameUIPanelLower>(res);
+	addPanel(move(guipl), smrc, m_GIH);
+
 	auto m_GOIH = make_shared<GameOverInputHandler>();
 	auto gouip = make_unique<GameOverUIPanel>(res);
 	addPanel(move(gouip), smrc, m_GOIH);
@@ -28,8 +32,7 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc,
 	float screenRatio = VideoMode::getDesktopMode().width /
 		VideoMode::getDesktopMode().height;
 
-	WorldState::WORLD_HEIGHT = WorldState::WORLD_WIDTH /
-		screenRatio;
+	WorldState::WORLD_HEIGHT = WorldState::WORLD_WIDTH / screenRatio;
 
 	m_View.setSize(
 		WorldState::WORLD_WIDTH, WorldState::WORLD_HEIGHT);

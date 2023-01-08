@@ -171,6 +171,9 @@
     <ClInclude Include="src\GameObjects\MothershipUpdateComponent.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="src\Screens\GameUIPanelLower.h">
+      <Filter>Header Files\Screens\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\BitmapStore.cpp">
@@ -289,6 +292,9 @@
     </ClCompile>
     <ClCompile Include="src\GameObjects\MothershipUpdate.cpp">
       <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\GameUIPanelLower.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

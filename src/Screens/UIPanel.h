@@ -25,7 +25,7 @@ protected:
 public:
 	View m_View;
 
-	UIPanel(Vector2i res, int x, int y,
+	UIPanel(Vector2i res, float x, float y,
 		float width, float height,
 		int alpha, int red, int green, int blue);
 

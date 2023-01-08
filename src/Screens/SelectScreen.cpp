@@ -10,15 +10,15 @@ SelectScreen::SelectScreen(
 	addPanel(move(suip), smrc, sih);
 	m_ScreenManagerRemoteControl = smrc;
 
-	//m_BackgroundTexture.loadFromFile("graphics/background.png");
+	m_BackgroundTexture.loadFromFile("graphics/background.png");
 
-	//m_BackgroundSprite.setTexture(m_BackgroundTexture);
-	//auto textureSize = m_BackgroundSprite.
-		//getTexture()->getSize();
+	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	auto textureSize = m_BackgroundSprite.
+		getTexture()->getSize();
 
-//	m_BackgroundSprite.setScale(float(
-	//	m_View.getSize().x) / textureSize.x,
-		//float(m_View.getSize().y) / textureSize.y);
+	m_BackgroundSprite.setScale(float(
+		m_View.getSize().x) / textureSize.x,
+		float(m_View.getSize().y) / textureSize.y);
 }
 
 void SelectScreen::draw(RenderWindow& window)

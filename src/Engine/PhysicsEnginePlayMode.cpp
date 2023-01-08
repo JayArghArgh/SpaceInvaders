@@ -49,7 +49,7 @@ void PhysicsEnginePlayMode::detectInvaderCollisions(
 
 					if ((*invaderIt).getTag() == "invader")
 					{
-						WorldState::SCORE++;
+						WorldState::SCORE+=10;
 						WorldState::NUM_INVADERS--;
 					}
 					// TODO later on we'll tweak this to reset the mothership and give the player another crack at it.

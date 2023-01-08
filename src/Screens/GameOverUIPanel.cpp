@@ -5,9 +5,9 @@ bool GameScreen::m_GameOver;
 
 GameOverUIPanel::GameOverUIPanel(Vector2i res) :
 	UIPanel(res,
-		(res.x / 10) * 3,
-		res.y / 2, // 50% of the resolution from the top
-		(res.x / 10) * 3, // as wide as 1/3 of the resolution
+		res.x /3,
+		res.y / 3, // 30% of the resolution from the top
+		res.x / 3, // as wide as 1/3 of the resolution
 		res.y / 6, // and as tall as 1/6 of the resolution
 		50, 255, 255, 255) // a, r, g, b	
 {
