@@ -6,10 +6,10 @@ SelectUIPanel::SelectUIPanel(Vector2i res) :
 	// by calling the super-class constructor
 	UIPanel(res,
 		(res.x / 10) * 2, // Start 2/10 accross
-		res.y / 3, // 1/3 of the resolution from the top
+		res.y * 0.7, // from top
 		(res.x / 10) * 6, // as wide as 6/10 of the resolution
-		res.y / 3, // and as tall as 1/3 of the resolution
-		50, 255, 255, 255) // a, r, g, b
+		res.y * 0.2, // and as tall
+		0, 255, 255, 255) // a, r, g, b
 {
 	m_ButtonWidth = res.x / 20;
 	m_ButtonHeight = res.y / 20;

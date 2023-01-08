@@ -1,6 +1,6 @@
 #include "UIPanel.h"
 
-UIPanel::UIPanel(Vector2i res, int x, int y,
+UIPanel::UIPanel(Vector2i res, float x, float y,
 	float width, float height,
 	int alpha, int red, int green, int blue)
 {
@@ -28,7 +28,8 @@ UIPanel::UIPanel(Vector2i res, int x, int y,
 	// StartX as a fraction of 1, startY as a fraction of 1 
 	// SizeX as a fraction of 1
 	// SizeY as a fraction of 1
-	m_View.setViewport(FloatRect(viewportStartX, viewportStartY,
+	m_View.setViewport(FloatRect(viewportStartX,
+		viewportStartY,
 		viewportSizeX, viewportSizeY));
 }
 

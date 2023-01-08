@@ -171,6 +171,7 @@
     <ClCompile Include="src\Screens\GameOverUIPanel.cpp" />
     <ClCompile Include="src\Screens\GameScreen.cpp" />
     <ClCompile Include="src\Screens\GameUIPanel.cpp" />
+    <ClCompile Include="src\Screens\GameUIPanelLower.cpp" />
     <ClCompile Include="src\Screens\InputHandler.cpp" />
     <ClCompile Include="src\Screens\Screen.cpp" />
     <ClCompile Include="src\Screens\ScreenManagerRemoteControl.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="src\Screens\GameOverUIPanel.h" />
     <ClInclude Include="src\Screens\GameScreen.h" />
     <ClInclude Include="src\Screens\GameUIPanel.h" />
+    <ClInclude Include="src\Screens\GameUIPanelLower.h" />
     <ClInclude Include="src\Screens\InputHandler.h" />
     <ClInclude Include="src\Screens\Screen.h" />
     <ClInclude Include="src\Screens\ScreenManagerRemoteControl.h" />
