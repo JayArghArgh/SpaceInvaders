@@ -15,6 +15,10 @@ public:
 	static const string WIDTH_END;
 	static const string HEIGHT;
 	static const string HEIGHT_END;
+	static const string GAP_X;
+	static const string GAP_X_END;
+	static const string ROW_QTY;
+	static const string ROW_QTY_END;
 	static const string LOCATION_X;
 	static const string LOCATION_X_END;
 	static const string LOCATION_Y;

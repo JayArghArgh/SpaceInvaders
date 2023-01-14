@@ -16,6 +16,22 @@ void GameObjectBlueprint::setHeight(float height) {
 	m_Height = height;
 }
 
+float GameObjectBlueprint::getRowQuantity() {
+	return m_RowQuantity;
+}
+
+void GameObjectBlueprint::setRowQuantity(float rowQuantity) {
+	m_RowQuantity = rowQuantity;
+}
+
+float GameObjectBlueprint::getGapX() {
+	return m_GapX;
+}
+
+void GameObjectBlueprint::setGapX(float gapX) {
+	m_GapX = gapX;
+}
+
 float GameObjectBlueprint::getLocationX() {
 	return m_LocationX;
 }

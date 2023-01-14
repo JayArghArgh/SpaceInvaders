@@ -48,6 +48,23 @@ void BlueprintObjectParser::parseNextObjectForBlueprint(
 			bp.setHeight(stof(value));
 		}
 
+		else if (lineFromFile.find(ObjectTags::ROW_QTY)
+			!= string::npos) {
+			value = extractStringBetweenTags(lineFromFile,
+				ObjectTags::ROW_QTY, ObjectTags::ROW_QTY_END);
+
+			// stof interprets the floating point value of the string.
+			bp.setRowQuantity(stof(value));
+		}
+
+		else if (lineFromFile.find(ObjectTags::GAP_X)
+			!= string::npos) {
+			value = extractStringBetweenTags(lineFromFile,
+				ObjectTags::GAP_X, ObjectTags::GAP_X_END);
+
+			bp.setGapX(stof(value));
+		}
+
 		else if (lineFromFile.find(ObjectTags::LOCATION_X)
 			!= string::npos) {
 

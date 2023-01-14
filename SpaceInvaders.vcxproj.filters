@@ -313,6 +313,9 @@
     <None Include="sound\shoot.ogg">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="world\level2">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="graphics\background.png">

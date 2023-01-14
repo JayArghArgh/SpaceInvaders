@@ -229,6 +229,7 @@
     <None Include="sound\playerexplode.ogg" />
     <None Include="sound\shoot.ogg" />
     <None Include="world\level1" />
+    <None Include="world\level2" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="graphics\background.png" />
