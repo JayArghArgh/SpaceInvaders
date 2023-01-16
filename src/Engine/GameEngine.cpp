@@ -8,7 +8,7 @@ GameEngine::GameEngine()
 		"Space Invaders++", Style::Fullscreen);
 
 	// TODO create shortcut to turn mouse on / off when keyboard not available.
-	m_Window.setMouseCursorVisible(true);
+	m_Window.setMouseCursorVisible(false);
 
 	m_ScreenManager = unique_ptr<ScreenManager>(new ScreenManager(
 		Vector2i(m_Resolution.x, m_Resolution.y)));

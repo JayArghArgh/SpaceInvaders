@@ -12,6 +12,14 @@ void GameOverInputHandler::handleKeyPressed(Event& event,
 		getPointerToScreenManagerRemoteControl()->
 			SwitchScreens("Select");
 	}
+	else if (Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		SoundEngine::playClick();
+		WorldState::WAVE_NUMBER = 0;
+
+		getPointerToScreenManagerRemoteControl()
+			->loadLevelInPlayMode("level1");
+	}
 }
 
 void GameOverInputHandler::handleLeftClick(

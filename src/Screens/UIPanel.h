@@ -17,6 +17,7 @@ protected:
 
 	Font m_Font;
 	Text m_Text;
+	Text m_Subtext;
 
 	void addButton(float x, float y, int width, int height,
 		int red, int green, int blue,

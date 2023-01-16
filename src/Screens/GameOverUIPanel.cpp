@@ -26,7 +26,7 @@ GameOverUIPanel::GameOverUIPanel(Vector2i res) :
 
 	m_Text.setCharacterSize(60);
 
-	initialiseButtons();
+	// initialiseButtons();
 }
 
 void GameOverUIPanel::initialiseButtons()

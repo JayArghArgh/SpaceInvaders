@@ -13,6 +13,14 @@ void SelectInputHandler::handleKeyPressed(
 	{
 		window.close();
 	}
+	else if (Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		SoundEngine::playClick();
+		WorldState::WAVE_NUMBER = 0;
+
+		getPointerToScreenManagerRemoteControl()
+			->loadLevelInPlayMode("level1");
+	}
 }
 
 void SelectInputHandler::handleLeftClick(

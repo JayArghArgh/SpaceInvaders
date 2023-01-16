@@ -6,7 +6,7 @@ SelectUIPanel::SelectUIPanel(Vector2i res) :
 	// by calling the super-class constructor
 	UIPanel(res,
 		(res.x / 10) * 2, // Start 2/10 accross
-		res.y * 0.7, // from top
+		res.y * 0.6, // from top
 		(res.x / 10) * 6, // as wide as 6/10 of the resolution
 		res.y * 0.2, // and as tall
 		0, 255, 255, 255) // a, r, g, b
@@ -27,7 +27,13 @@ SelectUIPanel::SelectUIPanel(Vector2i res) :
 
 	m_Text.setCharacterSize(80);
 
-	initialiseButtons();
+	m_Subtext.setFillColor(sf::Color(0, 255, 0, 0));
+	m_Subtext.setString("Press Player 1 Start Button");
+	m_Subtext.setPosition(Vector2f(m_ButtonPadding, m_ButtonHeight + (m_ButtonPadding)));
+	m_Subtext.setFont(m_Font);
+	m_Subtext.setCharacterSize(40);
+
+	//initialiseButtons();
 }
 
 void SelectUIPanel::initialiseButtons()
@@ -54,4 +60,5 @@ void SelectUIPanel::draw(RenderWindow& window)
 	show();
 	UIPanel::draw(window);
 	window.draw(m_Text);
+	window.draw(m_Subtext);
 }
