@@ -4,6 +4,7 @@
 #include <iostream>
 
 int WorldState::WAVE_NUMBER;
+// int WorldState::CREDITS;
 
 void SelectInputHandler::handleKeyPressed(
 	Event& event, RenderWindow& window)
@@ -15,11 +16,23 @@ void SelectInputHandler::handleKeyPressed(
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Enter))
 	{
-		SoundEngine::playClick();
-		WorldState::WAVE_NUMBER = 0;
-
-		getPointerToScreenManagerRemoteControl()
-			->loadLevelInPlayMode("level1");
+		if (WorldState::CREDITS > 0)
+		{
+			SoundEngine::playClick();
+			WorldState::WAVE_NUMBER = 0;
+			WorldState::CREDITS--;
+			getPointerToScreenManagerRemoteControl()
+				->loadLevelInPlayMode("level1");
+		}
+		else {
+			SoundEngine::playPlayerExplode();
+		}
+		
+	}
+	else if (Keyboard::isKeyPressed(Keyboard::Num5))
+	{
+		SoundEngine::playShoot();
+		WorldState::CREDITS++;
 	}
 }
 

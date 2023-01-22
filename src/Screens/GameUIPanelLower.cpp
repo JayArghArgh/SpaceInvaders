@@ -4,6 +4,7 @@
 
 // int WorldState::SCORE;
 int WorldState::LIVES;
+//int WorldState::CREDITS;
 
 GameUIPanelLower::GameUIPanelLower(Vector2i res) :
 	UIPanel(res,
@@ -31,7 +32,8 @@ void GameUIPanelLower::draw(RenderWindow& window)
 
 	ss << "LIVES "
 		<< WorldState::LIVES
-		<< " CREDIT 00"
+		<< " CREDIT "
+		<< WorldState::CREDITS
 		;
 
 	m_Text.setString(ss.str());

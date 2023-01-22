@@ -3,6 +3,9 @@
 #include "WorldState.h"
 #include <iostream>
 
+int WorldState::CREDITS;
+
+
 void GameOverInputHandler::handleKeyPressed(Event& event,
 	RenderWindow& window)
 {
@@ -14,11 +17,22 @@ void GameOverInputHandler::handleKeyPressed(Event& event,
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Enter))
 	{
-		SoundEngine::playClick();
-		WorldState::WAVE_NUMBER = 0;
-
-		getPointerToScreenManagerRemoteControl()
-			->loadLevelInPlayMode("level1");
+		if (WorldState::CREDITS > 0 && WorldState::LIVES<=0)
+		{
+			SoundEngine::playClick();
+			WorldState::WAVE_NUMBER = 0;
+			WorldState::CREDITS--;
+			getPointerToScreenManagerRemoteControl()
+				->loadLevelInPlayMode("level1");
+		}
+		else if (WorldState::LIVES<=0) {
+			SoundEngine::playPlayerExplode();
+		}
+	}
+	else if (Keyboard::isKeyPressed(Keyboard::Num5))
+	{
+		SoundEngine::playShoot();
+		WorldState::CREDITS++;
 	}
 }
 
