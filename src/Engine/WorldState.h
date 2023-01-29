@@ -9,4 +9,5 @@ public:
 	static int NUM_INVADERS_AT_START;
 	static int NUM_INVADERS;
 	static int WAVE_NUMBER;
+	static int CREDITS;
 };
