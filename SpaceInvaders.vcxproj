@@ -152,6 +152,7 @@
     <ClCompile Include="src\FileIO\GameObjectSharer.cpp" />
     <ClCompile Include="src\FileIO\ObjectTags.cpp" />
     <ClCompile Include="src\FileIO\PlayModeObjectLoader.cpp" />
+    <ClCompile Include="src\GameObjects\AnimatedGraphicsComponent.cpp" />
     <ClCompile Include="src\GameObjects\BulletSpawner.cpp" />
     <ClCompile Include="src\GameObjects\BulletUpdate.cpp" />
     <ClCompile Include="src\GameObjects\ColliderComponent.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="src\FileIO\GameObjectSharer.h" />
     <ClInclude Include="src\FileIO\ObjectTags.h" />
     <ClInclude Include="src\FileIO\PlayModeObjectLoader.h" />
+    <ClInclude Include="src\GameObjects\AnimatedGraphicsComponent.h" />
     <ClInclude Include="src\GameObjects\BulletSpawner.h" />
     <ClInclude Include="src\GameObjects\BulletUpdateComponent.h" />
     <ClInclude Include="src\GameObjects\ColliderComponent.h" />
@@ -235,6 +237,9 @@
     <Image Include="graphics\background.png" />
     <Image Include="graphics\bullet.png" />
     <Image Include="graphics\invader1.png" />
+    <Image Include="graphics\invader1_0.png" />
+    <Image Include="graphics\invader1_1.png" />
+    <Image Include="graphics\invader1_2.png" />
     <Image Include="graphics\mothership.png" />
     <Image Include="graphics\playership.png" />
   </ItemGroup>

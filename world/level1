@@ -17,7 +17,7 @@
 ***First row of invaders
 [START OBJECT]
 [NAME]invader[-NAME]
-[COMPONENT]Standard Graphics[-COMPONENT]
+[COMPONENT]Animated Graphics[-COMPONENT]
 [COMPONENT]Invader Update[-COMPONENT]
 [COMPONENT]Transform[-COMPONENT]
 [LOCATION X]0[-LOCATION X]

@@ -74,6 +74,7 @@ void GameObject::addComponent(shared_ptr<Component> component)
 		m_HasGraphicsComponent = true;
 		m_GraphicsComponentLocation = m_Components.size() - 1;
 	}
+
 	else if (component->getType() == "transform")
 	{
 		// Remember where the Transform component is
