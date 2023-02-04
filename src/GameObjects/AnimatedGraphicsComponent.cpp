@@ -2,8 +2,9 @@
 #include "BitmapStore.h"
 #include <iostream>
 #include <vector>
-#include <chrono>
-#include <thread>
+
+int AnimatedGraphicsComponent::spriteIndex = 0;
+int AnimatedGraphicsComponent::frameCount = 0;
 
 void AnimatedGraphicsComponent::initialiseGraphics(
 	string bitmapName,
@@ -22,27 +23,48 @@ void AnimatedGraphicsComponent::initialiseGraphics(
 	m_Sprite.setScale(float(objectSize.x) / textureSize.x,
 		float(objectSize.y) / textureSize.y);
 	m_Sprite.setColor(sf::Color(255, 0, 0));
-
 }
 
 void AnimatedGraphicsComponent::draw(
 	RenderWindow& window,
 	shared_ptr<TransformComponent> t
-)
-{
-	static int spriteIndex = 0;
-	static auto start = std::chrono::high_resolution_clock::now();
+) {
+	const int animation_frame_count = 6400;
+	const float frame_time = 1.f / 30;
 
-	// Change the sprite every 2 seconds
-	auto end = std::chrono::high_resolution_clock::now();
-	auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-	if (elapsed >= 1)
+	std::cout << "frameCount: " << frameCount << std::endl;
+	std::cout << "spriteIndex: " << spriteIndex << std::endl;
+
+	sf::Clock clock;
+	float elapsed = clock.restart().asSeconds();
+
+	frameCount += elapsed / frame_time;
+
+	// Change the sprite every animation_frame_count frames
+	if (frameCount >= animation_frame_count)
 	{
-		start = std::chrono::high_resolution_clock::now();
+		frameCount = 0;
 		spriteIndex = (spriteIndex + 1) % 2;
-		m_Sprite.setTexture(BitmapStore::getBitmap("graphics/" + m_SpriteBitmaps[spriteIndex]));
 	}
 
+	m_Sprite.setTexture(BitmapStore::getBitmap("graphics/" + m_SpriteBitmaps[spriteIndex]));
 	m_Sprite.setPosition(t->getLocation());
 	window.draw(m_Sprite);
+
+	bool disp_text = false;
+
+	if (disp_text)
+	{
+		Text text;
+		Font myFont;
+		myFont.loadFromFile("fonts/Roboto-Bold.ttf");
+
+		text.setFont(myFont);
+		text.setString("frameCount: " + std::to_string(frameCount) + "\nspriteIndex: " + std::to_string(spriteIndex));
+		text.setCharacterSize(5);
+		text.setFillColor(Color::White);
+		text.setPosition(10, 10);
+		window.draw(text);
+	}
+	frameCount++;
 }

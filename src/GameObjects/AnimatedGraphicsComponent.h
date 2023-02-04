@@ -3,13 +3,17 @@
 #include "GraphicsComponent.h"
 #include <string>
 
-class Component;
-
 class AnimatedGraphicsComponent : public GraphicsComponent {
 private:
 	sf::Sprite m_Sprite;
 	string m_SpecificType = "animated";
 	vector<string> m_SpriteBitmaps;
+
+	// Create a static variable to store the sprite index
+	static int spriteIndex;
+
+	// Create a static variable to store the frame count
+	static int frameCount;
 
 public:
 
@@ -36,7 +40,7 @@ public:
 	void draw(
 		RenderWindow& window,
 		shared_ptr<TransformComponent> t
-		) override;
+	) override;
 
 	void initialiseGraphics(
 		string bitmapName,
